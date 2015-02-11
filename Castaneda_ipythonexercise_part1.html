@@ -1,0 +1,100 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title> Answers to IPython Exercise Part 1</title>
+</head>
+
+<body>
+<p><b>Part I</b></p><br/>
+<p>IPython is installed</p><br/><br/>
+<p><b>Part II</b></p><br/>
+<p>1.) IPython Version - 1.2.1</p><br/>
+<p>2.) In the IPython environment is more readable than the standard Python interpreter because in IPython the output is "pretty-formatted" for easy reading.</p><br/>
+<p>3.) It displays the methods and attributes of "b". Tab Completion will show all the methods and attributes that you can use for "b".</p><br/>
+<p>4.) It is the same as #3 wherein it displays all the methods and attributes that you can use for datetime.</p><br/>
+<p>5.) In [5]: b?<br/>
+	   Type: list<br/>
+	   String Form: [1,2,3]<br/>
+	   Length: 3<br/>
+	   Docstring:<br/>
+	   list() -> new empty list<br/>
+	   list(iterable) -> new list initialized from iterable's items</p><br/>
+<p>6.) Using "?" will show the docstring and using "??" will show the function's source code if possible. </p><br/>
+<p>7.) It will show all the names matching the wildcard expression. The purpose of introspection is to provide information of the method or attribute we used.</p><br/>
+<p>8.) %run ipython_script_test.py </p><br/>
+<p>9.) 7.5.<br/> 1.46666666666.<br/> The script is run in an "empty namespace" to make it identical when running it to the command line using python script.py. Ipython will load all of the variables including imports, functions and globals up until exception, if any, is raised and by it it will be accessible in the Ipython shell.</p><br/>
+<p>10.) Usese %run -i instead of plain %run.</p><br/>
+<p>11.) Yes it will work but the drawback is that this mode of pasting mimics typing each line into IPython and line breaks are treated as "return". If you paste a code with an indented block and there is a blank line, IPython would think that the indented block is over. Thus, will raise an IndentationError.</p><br/>
+<p>12.) I see:<br/>
+		In [6]: %paste<br/>
+		x = 5<br/>
+		y = 7<br/>
+		if x > 5:<br/>
+			x += 1<br/>
+			<br/>
+			y = 8<br/>
+		## -- End pasted text --<br/>
+		The difference is that %paste takes whatever text is in the clipboard and executes it as a single block.<br/>
+		To end %cpaste just enter '--' alone on the line.</p><br/>
+<p>13.) Emacs and vim.</p><br/>
+<p>14.) Ctrl-P or up-arrow - Search backward in command history for commands starting with currently-entered text<br/>
+Ctrl-N or down-arrow - Search forward in command history for commands starting with currently-entered text<br/>
+Ctrl-R  - Readline-style reverse history search (partial matching)<br/>
+Ctrl-Shift-V - Paste text from clipboard<br/>
+Ctrl-C - Interrupt currently-executing code<br/>
+Ctrl-A - Move cursor to beginning of line<br/>
+Ctrl-E - Move cursor to end of line<br/>
+Ctrl-K - Delete text from cursor until end of line<br/>
+Ctrl-U - Discard all text on current line<br/>
+Ctrl-F - Move cursor forward one character<br/>
+Ctrl-B - Move cursor back one character<br/>
+Ctrl-L - Clear screen</p><br/>
+<p>15.) IPython will print a full call stack trace (traceback) with a few lines of context around the position at each point in the stack</p><br/>
+<p>16.) xmode. <br/>
+%xmode</p><br/>
+<p>17.) %quickref - Display the IPython Quick Reference Card<br/>
+%magic - Display detailed documentation for all of the available magic commands<br/>
+%debug - Enter the interactive debugger at the bottom of the last exception traceback<br/>
+%hist - Print command input (and optionally output) history<br/>
+%pdb - Automatically enter debugger after any exception<br/>
+%paste - Execute pre-formatted Python code from clipboard<br/>
+%cpaste - Open a special prompt for manually pasting Python code to be executed<br/>
+%reset - Delete all variables / names defined in interactive namespace<br/>
+%page - OBJECT Pretty print the object and display it through a pager<br/>
+%run script.py - Run a Python script inside IPython<br/>
+%prun statement - Execute  statement with  cProfile and report the profiler output<br/>
+%time statement - Report the execution time of single statement<br/>
+%timeit statement - Run a statement multiple times to compute an emsemble average execution time. Useful for
+timing code with very short execution time<br/>
+%who, %who_ls, %whos - Display variables defined in interactive namespace, with varying levels of information / verbosity<br/>
+%xdel variable - Delete a variable and attempt to clear any references to the object in the IPython internals</p><br/>
+<p>18.) 10000 loops, best of 3: 69.1 us per loop</p><br/>
+<p>19.) Resets the namespace by removing all names defined by the user.<br/>
+Parameters<br/>
+----------<br/>
+-f : force reset without asking for confirmation.<br/>
+-s : 'Soft' reset: Only clears your namespace, leaving history intact.<br/>
+References to objects may be kept. By default (without this option),<br/>
+we do a 'hard' reset, giving you a new session and removing all<br/>
+references to objects from the current session.</p><br/>
+<p>20.) automagic(%automagic), if enabled(as it by default), will make you use the magic commands without the percent sign, as long as no variable is defined with the same name as the magic function in question.</p><br/>
+<p><b>Part III</b></p><br/>
+<p>1.) ipython qtconsole --pylab=inline</p><br/>
+<p>2.) Error: it must be double dash (--)</p><br/>
+<p>3.) The Qt console can launch multiple IPython processes in tabs, enabling you to switch between tasks. It can also share a process with the IPython HTML Notebook application.</p><br/>
+<p><b>Part IV</b></p><br/>
+<p>1.) %ipython --pylib</p><br/>
+<p>2.) This magic replaces IPython's threaded shells that were activated using the (pylab/wthread/etc.) command line flags.</p><br/>
+<p>3.) This function lets you activate matplotlib interactive support at any point during an IPython session.</p><br/>
+<p>4.) To do this, run the %matplotlib magic command to enable plotting in the current Notebook. You can also use Matplotlib GUI backends in the Notebook, such as the Qt backend ( %matplotlib qt ). This will use Matplotlib's interactive Qt UI in a floating window to the side of your browser.</p><br/>
+<p>5.) It can resize by clicking on the "configure subplots" button.</p><br/>
+<p>6.) #!/usr/bin/env python<br/>
+# implement the example graphs/integral from pyx from pylab import * from matplotlib.patches import Polygon<br/>
+def func(x):  return (x-3)*(x-5)*(x-7)+85<br/>
+ax = subplot(111)<br/>
+a, b = 2, 9 # integral area x = arange(0, 10, 0.01) y = func(x) plot(x, y, linewidth=1)<br/>
+# make the shaded region ix = arange(a, b, 0.01) iy = func(ix) verts = [(a,0)] + list(zip(ix,iy)) + [(b,0)] poly = Polygon(verts, facecolor='0.8', edgecolor='k') ax.add_patch(poly)<br/>
+text(0.5 * (a + b), 30,  r&quot;$\int_a^b f(x)\mathrm{d}x$&quot;, horizontalalignment='center',  fontsize=20)<br/>
+axis([0,10, 0, 180]) figtext(0.9, 0.05, 'x') figtext(0.1, 0.9, 'y') ax.set_xticks((a,b)) ax.set_xticklabels(('a','b')) ax.set_yticks([]) show()<br/></p><br/>
+</body>
+</html>
